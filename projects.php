@@ -9,10 +9,10 @@
     <meta name="description" content="Kalvin Portfolio Template">
     <meta name="author" content="cosmos-themes">
 
-    <title>Capra Design - Portfolio</title>
+    <title>Marco Capra - Portfolio</title>
 
     <!-- favicon -->
-    <link href="images/favicon.ico" rel="icon" type="image/png">
+    <!-- <link href="images/favicon.ico" rel="icon" type="image/png"> -->
 
     <!--Font Awesome css-->
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -47,13 +47,13 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <!-- LOGO -->
-            <a class='navbar-brand logo' href='index.html'>
-                Capra Design
+            <a class='navbar-brand logo' href='/'>
+            Marco Capra
             </a>
 
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class='nav-link active' href='index.html'>Back</a>
+                    <a class='nav-link active' href='/'>Back</a>
                 </li>
             </ul>
         </div>
@@ -146,48 +146,7 @@
     <!--Blog List Section End-->
 
     <!--Footer Start-->
-    <footer class="pt-50 pb-50">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-3 col-sm-6">
-                    <!--Contant Item-->
-                    <div class="contact-info">
-                        <h5>Capra Design</h5>
-                        <p>lorem Ipsum donor sit.</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <!--Contant Item-->
-                    <div class="contact-info">
-                        <h5>Phone No.</h5>
-                        <p>(+1) 123 456 7890</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <!--Contant Item-->
-                    <div class="contact-info">
-                        <h5>Email</h5>
-                        <p>info@example.com</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <!--Contant Item-->
-                    <div class="contact-info">
-                        <h5>Address</h5>
-                        <p>123 lorem ipsum New York, USA.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-12">
-                    <hr>
-                    <p class="copy pt-30">
-                        Capra Design &copy; 2024. All Right Reserved, Designed By <a href="#">Rajan Sharma</a>.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include("includes/footer.php") ?>
     <!--Footer End-->
 
     <!--Jquery js-->

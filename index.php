@@ -1,3 +1,6 @@
+<?php
+include("includes/conn.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +14,7 @@
     <meta name="description" content="Kalvin Portfolio Template">
     <meta name="author" content="cosmos-themes">
 
-    <title>Capra Design - Portfolio </title>
+    <title>Marco Capra - Portfolio </title>
 
     <!-- favicon -->
     <!-- <link href="images/favicon.ico" rel="icon" type="image/png"> -->
@@ -61,8 +64,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <!-- LOGO -->
-            <a class='navbar-brand logo' href='index.html'>
-                Capra Design
+            <a class='navbar-brand logo' href='/'>
+                Marco Capra
             </a>
 
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -99,8 +102,8 @@
         <div class="container">
             <!--Banner Content-->
             <div class="banner-caption">
-                <h1>Hi! I'm Capra Design.</h1>
-                <p class="cd-headline clip mt-30">
+                <h1>Hi! I'm Marco Capra.</h1>
+                <p class="cd-headline clip ">
                     <span>Creative Yatch Designer located in Monaco.</span><br>
                     <span class="blc">Specialized in</span>
                     <span class="cd-words-wrapper">
@@ -138,7 +141,7 @@
                             <h2>About Me.</h2>
                             <span>Profession Yatch Desinger</span>
                         </div>
-                        <p>I'm <b>Capra Design.</b> I'm 38yo.I'm a yacht designer freelance.
+                        <p>I'm <b>Marco Capra.</b> I'm 38yo.I'm a yacht designer freelance.
                             In the past I worked for other yacht designers, as project manager and designer etc...</p>
                         <p> At the moment I provide service as detailed drawings for shipyard, or Direct Clients.
                             I do also project manager, and my expertise expand out of the nautical market.
@@ -179,96 +182,33 @@
             </div>
             <div class="row">
                 <div class="owl-carousel owl-theme">
-                    <!--Service Item-->
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <a href='single-blog.html'>
-                                <img src="images/services/service1.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <h3>1.Custom Yacht Design</h3>
-                            <p>Tailored yacht designs that blend luxury, functionality, and innovation to meet each
-                                client's unique needs.</p>
-                            <!-- <div class="blog-meta">
-                                <span class="more">
-                                    <a href='single-blog.html'>Read More</a>
-                                </span>
-                                <span class="date">
-                                    1/April/2018
-                                </span>
-                            </div> -->
-                        </div>
-                    </div>
-                    <!--Service Item-->
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <a href='single-blog.html'>
-                                <img src="images/services/service2.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <h3>2.Yacht Project Management</h3>
-                            <p>Comprehensive oversight of yacht construction projects, ensuring timely,
-                                budget-compliant, and high-quality delivery.</p>
-                            <!-- <div class="blog-meta">
-                                <span class="more">
-                                    <a href='single-blog.html'>Read More</a>
-                                </span>
-                                <span class="date">
-                                    1/April/2018
-                                </span>
-                            </div> -->
-                        </div>
-                    </div>
-                    <!--Service Item-->
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <a href='single-blog.html'>
-                                <img src="images/services/service3.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <h3>3.  Luxury Residential Design</h3>
-                            <p>Applying yacht design principles to optimize space and detail in high-end residential
-                                projects for unparalleled luxury.</p>
-                            <!-- <div class="blog-meta">
-                                <span class="more">
-                                    <a href='single-blog.html'>Read More</a>
-                                </span>
-                                <span class="date">
-                                    1/April/2018
-                                </span>
-                            </div> -->
-                        </div>
-                    </div>
-                    <!--Service Item-->
-                    <!-- <div class="blog-item">
-                        <div class="blog-img">
-                            <a href='single-blog.html'>
-                                <img src="images/blog/img-4.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <h3> Design Team Assembly</h3>
-                            <p>Formation of expert teams for complex projects, ensuring a seamless and successful
-                                execution from concept to completion.</p>
-                            <div class="blog-meta">
-                                <span class="more">
-                                    <a href='single-blog.html'>Read More</a>
-                                </span>
-                                <span class="date">
-                                    1/April/2018
-                                </span>
+
+                    <?php
+                    $services = mysqli_query($conn, "SELECT * FROM `service`");
+                    while ($row = mysqli_fetch_array($services)) {
+                        ?>
+                        <!--Service Item-->
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="images/services/<?php echo $row['img'] ?>" alt="">
+                            </div>
+                            <div class="blog-content">
+                                <h3>
+                                    <?php echo $row['heading'] ?>
+                                </h3>
+                                <p>
+                                    <?php echo $row['description'] ?>
+                                </p>
                             </div>
                         </div>
-                    </div> -->
+                    <?php } ?>
+
                 </div>
             </div>
             <div class="row">
                 <div class="col text-center">
                     <div class="blog-button pt-40">
-                        <a class='main-btn' href='services.html'>View More</a>
+                        <a class='main-btn' href='services'>View More</a>
                     </div>
                 </div>
             </div>
@@ -300,7 +240,7 @@
                         <p>Projects Completed</p>
                     </div>
                 </div>
-               
+
             </div>
         </div>
     </section>
@@ -316,14 +256,6 @@
                         <h6>Portfolio</h6>
                         <h2>Work I Have Done</h2>
                     </div>
-                    <!-- <div class="portfolio-filter text-center">
-                        <ul>
-                            <li class="sel-item" data-filter="*">All</li>
-                            <li data-filter=".design">Web Design</li>
-                            <li data-filter=".application">Applications</li>
-                            <li data-filter=".development">Development</li>
-                        </ul>
-                    </div> -->
                 </div>
             </div>
             <div class="row portfolio-items">
@@ -380,7 +312,7 @@
             <div class="row">
                 <div class="col text-center">
                     <div class="blog-button pt-40">
-                        <a class='main-btn' href='projects.html'>View More</a>
+                        <a class='main-btn' href='projects'>View More</a>
                     </div>
                 </div>
             </div>
@@ -402,26 +334,26 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
                     <!--Contact Form-->
-                    <form id='contact-form' method='POST'><input type='hidden' name='form-name' value='contactForm' />
+                    <form id='contact-form' method='POST' action="/">
                         <div class="row">
                             <div class="col-md-6 form-group">
                                 <!--name-->
                                 <input type="text" class="form-control con-validate" id="contact-name"
-                                    placeholder="Name" minlength=3>
+                                    placeholder="Name" minlength=3 required>
                             </div>
                             <div class="col-md-6 form-group">
                                 <!--email-->
                                 <input type="email" class="form-control con-validate" id="contact-email"
-                                    placeholder="Email">
+                                    placeholder="Email" required>
                             </div>
                             <div class="col-md-12 form-group">
                                 <!--message box-->
                                 <textarea class="form-control con-validate" id="contact-message"
-                                    placeholder="How can we help you?" rows=6></textarea>
+                                    placeholder="How can we help you?" rows=4 required></textarea>
                             </div>
                             <div class="col-md-12 text-center">
                                 <!--contact button-->
-                                <button id="contact-submit" class="mt-30 main-btn">
+                                <button class="mt-30 main-btn" type="submit">
                                     Send Message
                                 </button>
                             </div>
@@ -434,48 +366,7 @@
     <!--Contact Section End-->
 
     <!--Footer Start-->
-    <footer class="pt-50 pb-50">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-3 col-sm-6">
-                    <!--Contant Item-->
-                    <div class="contact-info">
-                        <h5>Kalvin</h5>
-                        <p>lorem Ipsum donor sit.</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <!--Contant Item-->
-                    <div class="contact-info">
-                        <h5>Phone No.</h5>
-                        <p>(+1) 123 456 7890</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <!--Contant Item-->
-                    <div class="contact-info">
-                        <h5>Email</h5>
-                        <p>info@example.com</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <!--Contant Item-->
-                    <div class="contact-info">
-                        <h5>Address</h5>
-                        <p>123 lorem ipsum New York, USA.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-12">
-                    <hr>
-                    <p class="copy pt-30">
-                        Kalvin &copy; 2021. All Right Reserved, Designed By Cosmos-Themes.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include("includes/footer.php") ?>
     <!--Footer End-->
 
     <!--Jquery js-->

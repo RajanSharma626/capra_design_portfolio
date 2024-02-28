@@ -91,29 +91,33 @@ if (isset($_POST['updateservices'])) {
                         <form method="post" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for=""> Image </label>
-                                <input type="file" name="img" id="" class="form-control" placeholder="Enter Name" <?php echo isset($_GET['id']) ? "" : "required";?>>
-                                <input type="text" name="id" id="" class="form-control" placeholder="Enter Name" value="<?php echo $id; ?>" hidden>
+                                <input type="file" name="img" id="" class="form-control" placeholder="Enter Name" <?php echo isset($_GET['id']) ? "" : "required"; ?>>
+                                <input type="text" name="id" id="" class="form-control" placeholder="Enter Name"
+                                    value="<?php echo $id; ?>" hidden>
 
                                 <?php
                                 if ($img != '') { ?>
-                                    <img src="../images/services/<?php echo $img ?>" alt="" class="mt-3" width="80px" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;">
+                                    <img src="../images/services/<?php echo $img ?>" alt="" class="mt-3" width="80px"
+                                        style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;">
                                 <?php }
                                 ?>
                             </div>
                             <div class="mb-3">
                                 <label for=""> Heading </label>
-                                <input type="text" name="heading" id="" value="<?php echo $heading ?>" class="form-control" placeholder="Enter Heading" required>
+                                <input type="text" name="heading" id="" value="<?php echo $heading ?>"
+                                    class="form-control" placeholder="Enter Heading" required>
                             </div>
 
                             <div class="mb-3">
                                 <label for="">Description</label>
-                                <textarea name="desc" id="" cols="30" rows="10" class="form-control" placeholder="Enter Description" required><?php echo $desc; ?></textarea>
+                                <textarea name="desc" id="" cols="30" rows="10" class="form-control"
+                                    placeholder="Enter Description" required><?php echo $desc; ?></textarea>
                             </div>
 
                             <div class="text-right">
                                 <?php
                                 if (isset($_GET['id']) && $_GET['id'] != '') {
-                                ?>
+                                    ?>
                                     <input type="submit" class="btn btn-primary" name="updateservices" value="Update">
                                 <?php } else { ?>
                                     <input type="submit" class="btn btn-primary" name="addservices" value="Submit">

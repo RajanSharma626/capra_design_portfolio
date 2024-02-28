@@ -1,9 +1,8 @@
+<?php
+include("includes/conn.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from kalvin.netlify.app/blogs-page by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 24 Feb 2024 05:41:27 GMT -->
-<!-- Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
 <head>
 
@@ -14,10 +13,10 @@
     <meta name="description" content="Kalvin Portfolio Template">
     <meta name="author" content="cosmos-themes">
 
-    <title>Capra Design - Services</title>
+    <title>Marco Capra - Services</title>
 
     <!-- favicon -->
-    <link href="images/favicon.ico" rel="icon" type="image/png">
+    <!-- <link href="images/favicon.ico" rel="icon" type="image/png"> -->
 
     <!--Font Awesome css-->
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -52,13 +51,13 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <!-- LOGO -->
-            <a class='navbar-brand logo' href='index.html'>
-                Capra Design
+            <a class='navbar-brand logo' href='/'>
+                Marco Capra
             </a>
 
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class='nav-link active' href='index.html'>Back</a>
+                    <a class='nav-link active' href='/'>Back</a>
                 </li>
             </ul>
         </div>
@@ -71,8 +70,8 @@
         <div class="banner-caption text-center">
             <h1>My Services</h1>
             <div class="bread-crumb mt-10">
-                <a href='index.html'>Home</a>
-                <a href="#">Services</a>
+                <a href='/'>Home</a>
+                <a href="services">Services</a>
             </div>
         </div>
     </section>
@@ -81,140 +80,77 @@
     <section class="blogs blog-list pt-100 pb-50" data-scroll-index="4">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <!--Blogs Item-->
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="images/services/service1.jpg" alt="">
-                        </div>
-                        <div class="blog-content">
-                            <h3>1. heading</h3>
-                            <p>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as
-                                necessary, making this the first...</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <!--Blogs Item-->
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="images/services/service2.jpg" alt="">
-                        </div>
-                        <div class="blog-content">
-                            <h3>2. heading</h3>
-                            <p>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as
-                                necessary, making this the first...</p>
+                <?php
+                $services = mysqli_query($conn, "SELECT * FROM `service`");
+                while ($row = mysqli_fetch_array($services)) {
+                    ?>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="images/services/<?php echo $row['img'] ?>" alt="">
+                            </div>
+                            <div class="blog-content">
+                                <h3>
+                                    <?php echo $row['heading'] ?>
+                                </h3>
+                                <p>
+                                    <?php echo $row['description'] ?>
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <!--Blogs Item-->
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="images/services/service3.jpg" alt="">
-                        </div>
-                        <div class="blog-content">
-                            <h3>3. heading</h3>
-                            <p>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as
-                                necessary, making this the first...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <!--Blogs Item-->
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="images/services/service4.jpg" alt="">
-                        </div>
-                        <div class="blog-content">
-                            <h3>4. heading</h3>
-                            <p>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as
-                                necessary, making this the first ...</p>
-
+                <?php } ?>
+            </div>
+            <div class="row">
+                <?php
+                $services = mysqli_query($conn, "SELECT * FROM `service`");
+                while ($row = mysqli_fetch_array($services)) {
+                    ?>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="images/services/<?php echo $row['img'] ?>" alt="">
+                            </div>
+                            <div class="blog-content">
+                                <h3>
+                                    <?php echo $row['heading'] ?>
+                                </h3>
+                                <p>
+                                    <?php echo $row['description'] ?>
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <!--Blogs Item-->
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="images/services/service5.jpg" alt="">
-                        </div>
-                        <div class="blog-content">
-                            <h3>5. heading</h3>
-                            <p>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as
-                                necessary, making this the first ...</p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <!--Blogs Item-->
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="images/services/service6.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <h3>6. heading</h3>
-                            <p>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as
-                                necessary, making this the first ...</p>
-
+                <?php } ?>
+            </div>
+            <div class="row">
+                <?php
+                $services = mysqli_query($conn, "SELECT * FROM `service`");
+                while ($row = mysqli_fetch_array($services)) {
+                    ?>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="images/services/<?php echo $row['img'] ?>" alt="">
+                            </div>
+                            <div class="blog-content">
+                                <h3>
+                                    <?php echo $row['heading'] ?>
+                                </h3>
+                                <p>
+                                    <?php echo $row['description'] ?>
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </section>
     <!--Blog List Section End-->
 
     <!--Footer Start-->
-    <footer class="pt-50 pb-50">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-3 col-sm-6">
-                    <!--Contant Item-->
-                    <div class="contact-info">
-                        <h5>Kalvin</h5>
-                        <p>lorem Ipsum donor sit.</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <!--Contant Item-->
-                    <div class="contact-info">
-                        <h5>Phone No.</h5>
-                        <p>(+1) 123 456 7890</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <!--Contant Item-->
-                    <div class="contact-info">
-                        <h5>Email</h5>
-                        <p>info@example.com</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <!--Contant Item-->
-                    <div class="contact-info">
-                        <h5>Address</h5>
-                        <p>123 lorem ipsum New York, USA.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-12">
-                    <hr>
-                    <p class="copy pt-30">
-                        Kalvin &copy; 2021. All Right Reserved, Designed By Cosmos-Themes.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include("includes/footer.php") ?>
     <!--Footer End-->
 
     <!--Jquery js-->
@@ -245,7 +181,5 @@
     </script>
 
 </body>
-
-<!-- Mirrored from kalvin.netlify.app/blogs-page by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 24 Feb 2024 05:41:29 GMT -->
 
 </html>
